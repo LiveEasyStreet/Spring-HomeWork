@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>homePage</title>
+    <link href="assets/css/reset.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+          rel="stylesheet">
+    <script defer src="assets/js/script.js"></script>
+</head>
+<body>
+
+<nav class="navbar_wrap">
+    <div class="navbar">
+        <div class="navbar_logo">
+        <span>
+            <i class="fa-solid fa-dice"></i>
+        </span>
+            <a href="#">
+                주사위 게임
+            </a>
+        </div>
+        <ul class="navbar_name">
+            <li><a href="#">찬솔</a></li>
+            <li><a href="#">유미</a></li>
+            <li><a href="/jw-dice">정원</a></li>
+            <li><a href="#">태경</a></li>
+            <li><a href="#">대혁</a></li>
+            <li><a href="#">예림</a></li>
+            <li><a href="#">원균</a></li>
+            <li><a href="#">하영</a></li>
+        </ul>
+    </div>
+    <a href="#" class="navbar_toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+    </a>
+</nav>
+
+
+<div class="container">
+    <div class="item item1">
+        <i class="fa-solid fa-dice-one"></i>
+        <i class="fa-solid fa-dice-two"></i>
+        <i class="fa-solid fa-dice-three"></i>
+        <div class="item-hidden"></div>
+        <i class="fa-solid fa-dice-four"></i>
+        <i class="fa-solid fa-dice-five"></i>
+        <i class="fa-solid fa-dice-six"></i>
+    </div>
+    <div class="item item2">
+        <span class="bold">목표</span>
+        <p>주사위를 컨트롤러와</p>
+        <p>html끼리 주고 받으며</p>
+        <p>주사위 게임을 만들어보기</p>
+
+    </div>
+    <div class="item item3">
+        <span class="bold">주의사항</span>
+        <p>1. 자신의 이름이 적힌 폴더에 컨트롤러와 html 만들기</p>
+        <p>2. 만들고 나서 index.html의 a 태그 수정하기</p>
+        <p>3. domain 패키지의 dice 클래스를 사용하기</p>
+        <p>4. 컨트롤러 계층에서 모든 로직을 끝내기</p>
+        <p>5. 핵심로직에 자바스크립트 사용하지 말기 꾸미기용으로만!</p>
+        <p>6. CSS 사용은 재량껏 해서 알아서 꾸미기</p>
+        <p>7. 스프링 구동 및 작동까지 다 되고나서 PR하기</p>
+        <p>8. 최대한 버튼을 만들어 주사위 게임을 작동시켜보기</p>
+    </div>
+    <div class="item item4">
+        <span class="bold">타임리프 문법</span>
+        <p>태그안에 th:text=${dice.num} 여기 내용은 숫자로 대체됨</p>
+    </div>
+    <div class="item item5">
+        <span class="bold">기간</span>
+        <p>다음주 금요일 수업 전까지 전부 PR할 것</p>
+    </div>
+    <div class="item item6">
+        <span class="bold"> 이제는 피드백 빡시게 들어갈꺼, 안 봐줌</span>
+    </div>
+
+
+</div>
+
+</body>
+</html>
