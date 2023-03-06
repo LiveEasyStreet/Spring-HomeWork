@@ -7,17 +7,18 @@ const makeDiceNum = function () {
     $.ajax({
         type: "post",
         url: "son_dice",
-        data: dice,
+        data: JSON.stringify(dice),
+        contentType: "application/json",
         success: function (res) {
             dice.number = res.number;
-            console.log("성공", dice.number);
+            // console.log("성공", dice.number);
             rotateDice(dice);
         },
         error: function () {
             console.log("실패");
         }
     })
-}
+};
 
 const rotateDice = function ({number}) {
     let diceNum = number;
@@ -26,7 +27,7 @@ const rotateDice = function ({number}) {
     setTimeout(() => {
         diceDiv.toggleClass(`turn${diceNum}`);
     }, 0);
-}
+};
 
 $(window).keydown((e) => {
     if (e.keyCode === 13 || e.which === 13) {
