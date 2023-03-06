@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/base :: layout (~{::title}, ~{::link}, ~{::script}, ~{::section})}">
+<head>
+    <link rel="stylesheet" href="">
+    <script defer src="son_script.js"></script>
+    <title>Son_Dice</title>
+</head>
+<body>
+<section>
+    <h1>테스트</h1>
+    <h2 th:text="${dice.number}"></h2>
+</section>
+</body>
+</html>
