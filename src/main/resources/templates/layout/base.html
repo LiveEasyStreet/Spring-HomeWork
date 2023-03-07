@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:fragment="layout (title, links, script, content)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title th:replace="${title}">레이아웃 타이틀</title>
+
+    <!-- 공통 -->
+    <link th:href="@{assets/css/reset.css}" type="text/css" rel="stylesheet">
+    <link th:href="@{assets/css/style.css}" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+          rel="stylesheet">
+    <script defer th:src="@{assets/js/script.js}"></script>
+
+    <th:block th:replace="${links}"></th:block>
+    <th:block th:replace="${script}"></th:block>
+</head>
+<body>
+
+<nav class="navbar_wrap">
+    <div class="navbar">
+        <div class="navbar_logo">
+        <span>
+            <i class="fa-solid fa-dice"></i>
+        </span>
+            <a href="/">
+                주사위 게임
+            </a>
+        </div>
+        <ul class="navbar_name">
+            <li><a href="#">찬솔</a></li>
+            <li><a href="#">유미</a></li>
+            <li><a href="/jw-dice">정원</a></li>
+            <li><a href="#">태경</a></li>
+            <li><a href="/son_dice">대혁</a></li>
+            <li><a href="#">예림</a></li>
+            <li><a href="#">원균</a></li>
+            <li><a href="#">하영</a></li>
+        </ul>
+    </div>
+    <a href="#" class="navbar_toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+    </a>
+</nav>
+<div th:replace="${content}">
+    <p>레이아웃 컨텐츠</p>
+</div>
+</body>
+</html>

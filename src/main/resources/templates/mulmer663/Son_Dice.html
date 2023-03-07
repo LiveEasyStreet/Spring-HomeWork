@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout (~{::title}, ~{::link}, ~{::script}, ~{::section})}">
+<head>
+    <link rel="stylesheet" th:href="@{css/son_style.css}">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+            crossorigin="anonymous"></script>
+    <script defer th:src="@{js/son_script.js}"></script>
+    <title>Son_Dice</title>
+</head>
+<body>
+<section class="container2">
+    <div class="card">
+        <div class="wrap">
+            <div class="dice">
+                <div><i class="fa-solid fa-dice-one"></i></div>
+                <div><i class="fa-solid fa-dice-two"></i></div>
+                <div><i class="fa-solid fa-dice-three"></i></div>
+                <div><i class="fa-solid fa-dice-four"></i></div>
+                <div><i class="fa-solid fa-dice-five"></i></div>
+                <div><i class="fa-solid fa-dice-six"></i></div>
+            </div>
+        </div>
+        <p>버튼을 누르거나 Enter키를 입력하세요.</p>
+        <button onclick="makeDiceNum()">Dice</button>
+    </div>
+</section>
+</body>
+</html>
