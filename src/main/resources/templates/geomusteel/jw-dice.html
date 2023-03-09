@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout (~{::title}, ~{::link}, ~{::script}, ~{::section})}">
+<head>
+    <link rel="stylesheet" th:href="@{css/jungwon_style.css}">
+    <link rel="stylesheet" th:href="@{assets/css/reset.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script></script>
+    <title>정원 주사위</title>
+</head>
+<body>
+<section class="sm_container">
+
+    <div class="jungwon_item">
+        <!-- th:text 를 이용해서 문자를 받아오는 타임리프 문법 -->
+        <div th:text="${diceNumber}">주사위번호</div>
+
+    </div>
+
+    <div class="jungwon_item">
+        <!-- th:class 를 이용해서 문자를 받아 태그에 추가하는 타임리프 문법 -->
+        <i th:classappend="${diceClass}"></i>
+    </div>
+    <div class="hidden"></div>
+    <div>
+        <form action="/jw-dice" method="get">
+        <button type="submit">다시 굴리기</button>
+        </form>
+    </div>
+
+</section>
+</body>
+</html>

@@ -1,0 +1,36 @@
+.sm_container {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.jungwon_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 10rem;
+    background-color: white;
+    border: 1px solid lightgray;
+    margin: 20px 10px;
+}
+
+.hidden {
+    width: 100%;
+}
+i {
+    font-size: 70px;
+}
+
+button {
+    background-color: #F66B0E;
+    width: 342px;
+    height: 40px;
+    color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
