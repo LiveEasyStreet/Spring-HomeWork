@@ -20,7 +20,7 @@
 .hidden {
     width: 100%;
 }
-i {
+.jungwon_item > i {
     font-size: 70px;
 }
 
@@ -29,7 +29,7 @@ button {
     width: 342px;
     height: 40px;
     color: white;
-    border: 1px solid lightgray;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 20px;
