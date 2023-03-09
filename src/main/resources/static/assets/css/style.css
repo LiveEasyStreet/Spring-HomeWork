@@ -1,17 +1,17 @@
 :root {
-    --point-color: #205375;
     --point-color: #F66B0E;
     --background-color: #EFEFEF;
     --font-color: #112B3C;
 }
 
 body {
+    overflow-x: hidden;
     font-family: 'Noto Sans KR', sans-serif;
     background-color: var(--background-color);
 }
 
 .navbar_wrap {
-    width: 100%;
+    width: 100vw;
     border-bottom: 1px solid var(--point-color);
     background-color: white;
     box-shadow: 0 4px 4px -2px lightgray;
