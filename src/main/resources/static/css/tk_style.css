@@ -1,84 +1,8 @@
 :root {
-    --point-color: #205375;
     --point-color: #F66B0E;
     --point-color-purple: #8977AD;
     --background-color: #EFEFEF;
     --font-color: #112B3C;
-}
-
-body {
-    font-family: 'Noto Sans KR', sans-serif;
-    background-color: var(--background-color);
-}
-
-.navbar_wrap {
-    width: 100%;
-    border-bottom: 1px solid var(--point-color);
-    background-color: white;
-    box-shadow: 0 4px 4px -2px lightgray;
-}
-
-.navbar {
-    margin: auto;
-    max-width: 1280px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-}
-
-.navbar_logo {
-    font-size: 35px;
-    font-weight: bold;
-    color: var(--font-color);
-
-}
-
-.navbar_logo a {
-    font-size: 25px;
-    font-weight: bold;
-    color: var(--font-color);
-    margin-left: 10px;
-}
-
-.navbar_logo i {
-    color: var(--point-color);
-}
-
-.navbar_name {
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.navbar_name li {
-    width: 12.5%;
-    height: auto;
-    border-radius: 5px;
-    transition: 0.2s;
-    margin: 0 2px;
-}
-
-.navbar_name li a {
-    width: 100%;
-    height: 100%;
-    font-weight: 400;
-    font-size: 20px;
-    display: block;
-    color: var(--font-color);
-    text-align: center;
-    transition: 0.2s;
-    padding: 10px 0;
-}
-
-.navbar_name li a:hover {
-    color: white;
-}
-
-.navbar_name li:hover {
-    background-color: var(--point-color);
-    color: white;
 }
 
 .container {
@@ -113,15 +37,18 @@ body {
 .item1 >p{
     padding: 30px;
 }
+
+.item i {
+    padding: 10px;
+    font-size: 100px;
+    color: var(--font-color);
+}
 .wrap {
     position: relative;
     width: 100px;
     height: 100px;
-    margin: 100px auto;
     perspective: 700px;
     cursor: pointer;
-    padding: 0px;
-    margin: 0px;
 }
 
 .wrap::after {
@@ -159,7 +86,6 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
-    font-size: 100px;
     background-color: #fefefe;
     /*box-shadow: inset -0.35rem 0.35rem 1rem rgba(0, 0, 0, 0.3),*/
     /*inset 0.5rem -0.25rem 1rem rgba(0, 0, 0, 0.15);*/
@@ -168,7 +94,6 @@ body {
     background-color: rgba(253, 253, 253, 0.8);
     transition: 4s;
 }
-
 
 .wrap .dice > div:nth-child(1) {
     transform: translateZ(50px);
@@ -239,55 +164,4 @@ body {
 }
 .item6 .bold {
     color: var(--point-color-purple);
-}
-
-.navbar_toggle_btn {
-    display: none;
-    color: var(--point-color);
-    font-size: 25px;
-    position: absolute;
-    right: 30px;
-    top: 22px;
-}
-
-
-@media screen and (max-width: 768px) {
-    .navbar {
-
-        flex-direction: column;
-        align-items: start;
-    }
-
-    .navbar_name {
-        display: none;
-        flex-wrap: wrap;
-        padding: 15px 0;
-        align-items: center;
-        width: 100%;
-    }
-
-    .navbar_name li {
-        width: 48%;
-        color: white;
-    }
-
-    .navbar_name li a {
-    }
-
-    .navbar_toggle_btn {
-        display: block;
-    }
-
-    .navbar_name.active {
-        display: flex;
-    }
-
-    .container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .item-hidden {
-        display: block;
-    }
 }
