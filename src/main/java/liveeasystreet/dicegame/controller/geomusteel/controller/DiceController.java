@@ -19,6 +19,7 @@ public class DiceController {
         int diceNumber = random.nextInt(6) + 1;
 
 
+
         // 모델에 생성된 번호 저장 //
         model.addAttribute("diceNumber", diceNumber);
         // ** 숫자를 직접 넣어서 하는 방법 종료 ** //
