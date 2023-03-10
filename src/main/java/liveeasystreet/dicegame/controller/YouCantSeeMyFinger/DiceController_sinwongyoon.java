@@ -4,12 +4,14 @@ import liveeasystreet.dicegame.domain.Dice;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
 public class DiceController_sinwongyoon {
 
-    @GetMapping(value = "/Dice_number")
+    @GetMapping("/Dice_number")
+    @PostMapping ("/Dice_number")
     public String roll(Model model) {
 
         Dice dice = new Dice();
