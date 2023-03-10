@@ -1,10 +1,64 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>주사위</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>homePage</title>
+    <link href="/assets/css/reset.css" type="text/css" rel="stylesheet">
+    <link href="/assets/css/style.css" type="text/css" rel="stylesheet">
+    <link href="/css/tk_style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+          rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.1/jquery-migrate.min.js"></script>
+    <script src="/js/tk_dice.js"></script>
+    <script defer src="/assets/js/script.js"></script>
 </head>
 <body>
-    <div th:text="${DiceNumber.number}">주사위번호가 출력되었을거에요.</div>
+
+<nav class="navbar_wrap">
+    <div class="navbar">
+        <div class="navbar_logo">
+        <span>
+            <i class="fa-solid fa-dice"></i>
+        </span>
+            <a href="/">
+                TK108's Page
+            </a>
+        </div>
+        <ul class="navbar_name">
+            <li><a href="#">찬솔</a></li>
+            <li><a href="#">유미</a></li>
+            <li><a href="/jw-dice">정원</a></li>
+            <li><a href="/tk108_dice">태경</a></li>
+            <li><a href="/son_dice">대혁</a></li>
+            <li><a href="#">예림</a></li>
+            <li><a href="#">원균</a></li>
+            <li><a href="#">하영</a></li>
+        </ul>
+    </div>
+    <a href="#" class="navbar_toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+    </a>
+</nav>
+
+
+<div th:text="${DiceNumber.number}"></div>
+
+<div>
+    <form action="/Dice_number" method="get">
+        <button type="submit">다시 굴리기</button>
+    </form>
+</div>
+
 </body>
 </html>
