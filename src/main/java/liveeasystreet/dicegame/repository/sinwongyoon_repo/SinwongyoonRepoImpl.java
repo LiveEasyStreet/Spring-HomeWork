@@ -11,11 +11,7 @@ import java.util.Map;
 
 @Repository
 public class SinwongyoonRepoImpl implements IDiceRepository {
-    /**
-     * 저장 기능 메소드
-     * <p>각 숫자가 몇 번 나왔는지 저장한다.</p>
-     * <p>Map구조의 매개변수를 그대로 리포지토리 필드 Map에 반영하면 된다.</p>
-     */
+
     private static final Map<Integer, Integer> repo = new HashMap<>();
     private Integer sequence = 0;
 
@@ -26,11 +22,6 @@ public class SinwongyoonRepoImpl implements IDiceRepository {
         SinwongyoonRepoImpl.repo.put(sequence, diceHistory.getHistory().get(sequence));
     }
 
-    /**
-     * 조회 기능 메소드
-     * <p>각 숫자가 몇 번 나왔는지 조회하는 메소드</p>
-     * <p>엄청 간단하겠지?</p>
-     */
     @Override
     public DiceHistory findAll() {
         return null;

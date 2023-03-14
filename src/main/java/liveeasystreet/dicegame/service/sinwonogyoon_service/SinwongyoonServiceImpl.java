@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class SinwongyoonServiceImpl implements IDiceService {
     @Override
     public void save(Dice dice, DiceHistory diceHistory) {
-        //대입은 여기서
+
     }
 
     @Override
