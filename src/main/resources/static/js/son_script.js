@@ -1,18 +1,25 @@
 const makeDiceNum = function () {
 
-    const dice = {
-        number: 0
+    const diceForm = {
+        number: 0,
+        history: {
+            1: 0,
+            2: 0,
+            3: 0,
+            4: 0,
+            5: 0,
+            6: 0,
+        }
     }
 
     $.ajax({
         type: "post",
         url: "son_dice",
-        data: JSON.stringify(dice),
+        data: JSON.stringify(diceForm),
         contentType: "application/json",
         success: function (res) {
-            dice.number = res.number;
-            // console.log("성공", dice.number);
-            rotateDice(dice);
+            rotateDice(res);
+            console.log(res.history);
         },
         error: function () {
             console.log("실패");
