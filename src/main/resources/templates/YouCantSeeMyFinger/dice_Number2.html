@@ -1,85 +1,89 @@
 <!doctype html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>homePage</title>
-  <link href="/assets/css/reset.css" type="text/css" rel="stylesheet">
-  <link href="/assets/css/style.css" type="text/css" rel="stylesheet">
-  <link href="/css/tk_style.css" type="text/css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.1/jquery-migrate.min.js"></script>
-  <script src="/js/tk_dice.js"></script>
-  <script defer src="/assets/js/script.js"></script>
-  <style>
-    #form_action {
-      width: 100vw;
-      height: 100vw;
-      display: flex;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>homePage</title>
+    <link href="/assets/css/reset.css" type="text/css" rel="stylesheet">
+    <link href="/assets/css/style.css" type="text/css" rel="stylesheet">
+    <link href="/css/tk_style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+          rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.1/jquery-migrate.min.js"></script>
+    <script src="/js/tk_dice.js"></script>
+    <script defer src="/assets/js/script.js"></script>
+    <style>
+        #form_action {
+            width: 100vw;
+            display: flex;
+        }
 
-    #button1 {
-      align-content: center;
-      justify-content: center;
-      display: block;
-      margin: 5px auto;
-      width: 100px;
-      height: 30px;
-    }
+        #button1, #button2 {
+            align-content: center;
+            justify-content: center;
+            display: block;
+            margin: 5px auto;
+            width: 100px;
+            height: 30px;
+        }
 
-    #output_number {
-      margin: 10px auto;
-      text-align: center;
-      font-size: 50px;
-    }
-  </style>
+        #output_number {
+            margin: 10px auto;
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
 </head>
 <body>
 
 <nav class="navbar_wrap">
-  <div class="navbar">
-    <div class="navbar_logo">
+    <div class="navbar">
+        <div class="navbar_logo">
         <span>
             <i class="fa-solid fa-dice"></i>
         </span>
-      <a href="/">
-        TK108's Page
-      </a>
+            <a href="/">
+                TK108's Page
+            </a>
+        </div>
+        <ul class="navbar_name">
+            <li><a href="#">찬솔</a></li>
+            <li><a href="/yumi_dice">유미</a></li>
+            <li><a href="/jw-dice">정원</a></li>
+            <li><a href="/tk108_dice">태경</a></li>
+            <li><a href="/son_dice">대혁</a></li>
+            <li><a href="/yrDice">예림</a></li>
+            <li><a href="/sin_dice">원균</a></li>
+            <li><a href="#">하영</a></li>
+        </ul>
     </div>
-    <ul class="navbar_name">
-      <li><a href="#">찬솔</a></li>
-      <li><a href="/yumi_dice">유미</a></li>
-      <li><a href="/jw-dice">정원</a></li>
-      <li><a href="/tk108_dice">태경</a></li>
-      <li><a href="/son_dice">대혁</a></li>
-      <li><a href="/yrDice">예림</a></li>
-      <li><a href="/sin_dice">원균</a></li>
-      <li><a href="#">하영</a></li>
-    </ul>
-  </div>
-  <a href="#" class="navbar_toggle_btn">
-    <i class="fa-solid fa-bars"></i>
-  </a>
+    <a href="#" class="navbar_toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+    </a>
 </nav>
 
 <p th:text="${dice_num.getNumber()}" id="output_number"></p>
 
 <div id="button_container">
-  <form action="/sin/dice_number" method="post" id="form_action">
-    <button type="submit" id="button1">주사위 던지기</button>
-  </form>
+    <form action="/sin/dice_number" method="post" id="form_action">
+        <button type="submit" id="button1">주사위 던지기</button>
+    </form>
 </div>
 
+<div>
+    <form action="/sin/save" method="post" id="form_action2">
+        <button type="submit" id="button2"><Strong>Repository</Strong></button>
+    </form>
+</div>
 </body>
 </html>
