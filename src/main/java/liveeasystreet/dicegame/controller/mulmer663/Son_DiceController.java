@@ -21,6 +21,7 @@ public class Son_DiceController {
 
     @GetMapping("son_dice")
     public String son_DiceController() {
+
         return "mulmer663/Son_Dice";
     }
 

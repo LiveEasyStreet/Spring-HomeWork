@@ -14,10 +14,7 @@ public class SonDiceRepositoryImp implements IDiceRepository {
 
     @Override
     public void save(DiceHistory diceHistory) {
-        Map<Integer, Integer> history = diceHistory.getHistory();
-        for (Integer key : history.keySet()) {
-            store.put(key, history.get(key));
-        }
+       store.putAll(diceHistory.getHistory());
     }
 
     @Override
