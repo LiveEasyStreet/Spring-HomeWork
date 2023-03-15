@@ -6,7 +6,6 @@ import liveeasystreet.dicegame.domain.DiceHistory;
 import java.util.Map;
 
 public interface IDiceService {
-
     /**
      * 각 숫자별 나온 횟수를 기록하는 메소드
      * <p>매개변수로는 주사위만 받고 리포지토리의 findAll 메소드 호출 할 것</p>
