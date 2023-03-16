@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout (~{::title}, ~{::link}, ~{::script}, ~{::section})}">
+<head>
+    <title>찬솔</title>
+    <link rel="stylesheet" href="">
+    <script></script>
+</head>
+<body>
+<section>
+    <div th:text="${myDice.number}"></div>
+    <div>1번 : <span th:text="${diceHistory.history[1]}">키1의 값</span></div>
+    <div>2번 : <span th:text="${diceHistory.history[2]}">키2의 값</span></div>
+    <div>3번 : <span th:text="${diceHistory.history[3]}">키3의 값</span></div>
+    <div>4번 : <span th:text="${diceHistory.history[4]}">키4의 값</span></div>
+    <div>5번 : <span th:text="${diceHistory.history[5]}">키5의 값</span></div>
+    <div>6번 : <span th:text="${diceHistory.history[6]}">키6의 값</span></div>
+</section>
+</body>
+</html>
