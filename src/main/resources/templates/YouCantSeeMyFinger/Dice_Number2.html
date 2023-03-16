@@ -28,7 +28,7 @@
             display: flex;
         }
 
-        #button1, #button2 {
+        #button1, #button2 , #button3{
             align-content: center;
             justify-content: center;
             display: block;
@@ -85,17 +85,19 @@
     </form>
 </div>
 
+<div id="clear_container">
+    <form action="/sin/reset" method="post">
+        <button type="submit" id="button3">Reset</button>
+    </form>
+</div>
+
 <div id="number_repo">
-<!--    <p><span>숫자 1 : </span><span th:text="${diceHistory.history[1]}"></span></p>-->
-<!--    <p><span>숫자 2 : </span><span th:text="${diceHistory.history[2]}"></span></p>-->
-<!--    <p><span>숫자 3 : </span><span th:text="${diceHistory.history[3]}"></span></p>-->
-<!--    <p><span>숫자 4 : </span><span th:text="${diceHistory.history[4]}"></span></p>-->
-<!--    <p><span>숫자 5 : </span><span th:text="${diceHistory.history[5]}"></span></p>-->
-<!--    <p><span>숫자 6 : </span><span th:text="${diceHistory.history[6]}"></span></p>-->
     <p th:each="number : ${diceHistory.history}">
-        <span th:text=" '숫자' + ${number.getKey()} + ' : '"></span>
+        <span th:text=" '숫자   ' + ${number.getKey()} + ' :  '"></span>
         <span th:text=" ${number.getValue()}"></span>
     </p>
 </div>
+
+
 </body>
 </html>

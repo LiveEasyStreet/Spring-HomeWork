@@ -60,4 +60,11 @@ public class Sin_Service implements wongyoon_diceService {
         log.info("서비스 :: loadHistory invoked");
         return diceRepo.findAll();
     }
+
+    @Override
+    public void clear(DiceHistory diceHistory) {
+        log.info("서비스 :: clear invoked");
+        diceHistory.getHistory().clear();
+    }
+
 }

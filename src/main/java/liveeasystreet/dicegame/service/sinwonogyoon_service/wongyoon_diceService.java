@@ -17,4 +17,6 @@ public interface wongyoon_diceService {
      * <p>엄청 간단함</p>
      */
     DiceHistory loadHistory();
+
+    void clear(DiceHistory diceHistory);
 }

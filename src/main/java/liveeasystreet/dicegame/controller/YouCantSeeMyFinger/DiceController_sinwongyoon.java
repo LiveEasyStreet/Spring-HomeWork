@@ -10,9 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 /**
  * Repository -> Service -> Controller
- *
+ * <p>
  * 1 ) Service는 Repository가 필요하다.
  * 2 ) Controller는 Service가 필요하다.
  * 개발 순서 : Controller ==> Repository ==> Service
@@ -61,5 +63,15 @@ public class DiceController_sinwongyoon {
         model.addAttribute("diceHistory", savedDiceHistory);
 
         return "YouCantSeeMyFinger/Dice_Number2";
+    } // End diceNumber2
+
+    @PostMapping("/sin/reset")
+    public String clear(Model model) {
+        log.info("Controller :: clear invoked");
+
+        DiceHistory diceHistory = diceService.loadHistory();
+        diceService.clear(diceHistory);
+        model.addAttribute("diceHistory", diceHistory);
+        return "YouCantSeeMyFinger/Dice_number";
     }
 }
