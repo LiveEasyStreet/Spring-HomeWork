@@ -19,20 +19,24 @@ public class Sin_Service implements wongyoon_diceService {
 
     @Override
     public void save(Dice dice) {
-        log.info("서비스 :: Save invoked");
+        log.info("");
         Integer Dice_number = dice.getNumber();
-        DiceHistory diceHistory = new DiceHistory();
+        DiceHistory diceHistory = diceRepo.findAll();
+        // 레포 다시 확인
 
-        Map<Integer, Integer> map = new HashMap<>();
-        diceHistory.setHistory(map);
+        Map<Integer, Integer> history = diceHistory.getHistory();
 
-        log.info("DiceHistory Map에 Data 주입완료");
+        if (!history.containsKey(1) && !history.containsKey(6)) {
+            for (int i = 1; i <= 6; i++) {
+                history.put(i, 0);
+            }
+        }
 
-        Integer dice_count = diceHistory.getHistory().getOrDefault(Dice_number, 0);
-        diceHistory.getHistory().put(Dice_number, dice_count + 1);
+        Integer dice_count = history.getOrDefault(Dice_number, 0);
+        history.put(Dice_number, dice_count + 1);
+        log.info("diceHistory : {}",diceHistory);
+
         diceRepo.save(diceHistory);
-        log.info("여기까지");
-
         // 문제발생 1 :
         // NullPointerException 발생
         //

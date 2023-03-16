@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
  * Repository -> Service -> Controller
  * 1 ) Service는 Repository가 필요하다.
  * 2 ) Controller는 Service가 필요하다.
+ * 개발 순서 : Controller ==> Repository ==> Service
  */
 @Slf4j
 @Controller
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 public class DiceController_sinwongyoon {
 
     private final wongyoon_diceService diceService;
+    //
 
     @GetMapping("/sin")
     public String diceNumber1() {
