@@ -42,6 +42,10 @@
             text-align: center;
             font-size: 50px;
         }
+
+        #number_repo {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -81,10 +85,13 @@
     </form>
 </div>
 
-<div>
-    <form action="/sin/save" method="post" id="form_action2">
-        <button type="submit" id="button2"><Strong>Repository</Strong></button>
-    </form>
+<div id="number_repo">
+    <p><span>숫자 1 : </span><span th:text="${diceHistory.history[1]}"></span></p>
+    <p><span>숫자 2 : </span><span th:text="${diceHistory.history[2]}"></span></p>
+    <p><span>숫자 3 : </span><span th:text="${diceHistory.history[3]}"></span></p>
+    <p><span>숫자 4 : </span><span th:text="${diceHistory.history[4]}"></span></p>
+    <p><span>숫자 5 : </span><span th:text="${diceHistory.history[5]}"></span></p>
+    <p><span>숫자 6 : </span><span th:text="${diceHistory.history[6]}"></span></p>
 </div>
 </body>
 </html>
