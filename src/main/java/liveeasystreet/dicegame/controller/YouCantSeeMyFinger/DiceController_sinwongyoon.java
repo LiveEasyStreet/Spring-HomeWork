@@ -1,32 +1,77 @@
 package liveeasystreet.dicegame.controller.YouCantSeeMyFinger;
 
 import liveeasystreet.dicegame.domain.Dice;
+import liveeasystreet.dicegame.domain.DiceHistory;
+import liveeasystreet.dicegame.service.IDiceService;
+import liveeasystreet.dicegame.service.sinwonogyoon_service.wongyoon_diceService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
 
+/**
+ * Repository -> Service -> Controller
+ * <p>
+ * 1 ) Service는 Repository가 필요하다.
+ * 2 ) Controller는 Service가 필요하다.
+ * 개발 순서 : Controller ==> Repository ==> Service
+ */
+@Slf4j
 @Controller
+@RequiredArgsConstructor
 public class DiceController_sinwongyoon {
 
-    @GetMapping("/Dice_number")
-    @PostMapping ("/Dice_number")
-    public String roll(Model model) {
+    private final wongyoon_diceService diceService;
+    // 컨트롤러는 서비스가 필요하다.
+    // 생성자 주입
 
-        Dice dice = new Dice();
+    @GetMapping("/sin")
+    public String diceNumber1() {
+        log.info("컨트롤러 :: diceNumber1 invoked");
+        return "YouCantSeeMyFinger/Dice_number";
+    }
+    // 개발 의도 :
+    // 시작하기 버튼을 눌러야지만 숫자 뽑기
 
-        int Dice_number;
-        // 랜덤숫자 1부터 6까지 임시 저장
-        Dice_number = (int) (Math.random() * 6 + 1);
-        // 저장완료
-        dice.setNumber(Dice_number);
-        // setter 이용하여 값 넣기
-        model.addAttribute("DiceNumber", dice);
-        // 타임리프문을 사용하여 객체의 값 출력
-        // ex ) ${DiceNumber.number}
-        // domain사용
+    @PostMapping("/sin/dice_number")
+    public String diceNumber2(Model model) {
+        log.info("컨트롤러 :: diceNumber2 invoked");
 
+        Dice wongyoon_Dice = new Dice();
+        // 1 ) Dice 객체 생성
+
+        DiceHistory diceHistory = new DiceHistory();
+        // 2 ) DiceHistory의 history(Map)을 사용하기 위해 객체 생성
+
+        int diceNumber = (int) (Math.random() * 6 + 1);
+        // 3 ) 주사위 번호 뽑기
+
+        wongyoon_Dice.setNumber(diceNumber);
+        // 4 ) Dice 객체에 number값 설정
+
+        diceService.save(wongyoon_Dice);
+        // 5 )
+        // DiceHistory의 도메인을 사용하도록 요구받음
+        // private static final Map<Integer, Integer> repo = new HashMap<>();
+        // 위의 repo가 실질적 데이터 저장소이다. ( 때문에 Repository의 save메소드에서 diceHistory의 Map을 repo로 복사하는 과정을 거친다.)
+
+        model.addAttribute("dice_num", wongyoon_Dice);
+        DiceHistory savedDiceHistory = diceService.loadHistory();
+        model.addAttribute("diceHistory", savedDiceHistory);
+
+        return "YouCantSeeMyFinger/Dice_Number2";
+    } // End diceNumber2
+
+    @PostMapping("/sin/reset")
+    public String clear(Model model) {
+        log.info("Controller :: clear invoked");
+
+        DiceHistory diceHistory = diceService.loadHistory();
+        diceService.clear(diceHistory);
+        model.addAttribute("diceHistory", diceHistory);
         return "YouCantSeeMyFinger/Dice_number";
     }
 }

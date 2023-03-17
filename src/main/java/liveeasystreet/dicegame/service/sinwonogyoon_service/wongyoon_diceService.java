@@ -1,11 +1,9 @@
-package liveeasystreet.dicegame.service;
+package liveeasystreet.dicegame.service.sinwonogyoon_service;
 
 import liveeasystreet.dicegame.domain.Dice;
 import liveeasystreet.dicegame.domain.DiceHistory;
 
-import java.util.Map;
-
-public interface IDiceService {
+public interface wongyoon_diceService {
     /**
      * 각 숫자별 나온 횟수를 기록하는 메소드
      * <p>매개변수로는 주사위만 받고 리포지토리의 findAll 메소드 호출 할 것</p>
@@ -19,4 +17,6 @@ public interface IDiceService {
      * <p>엄청 간단함</p>
      */
     DiceHistory loadHistory();
+
+    void clear(DiceHistory diceHistory);
 }

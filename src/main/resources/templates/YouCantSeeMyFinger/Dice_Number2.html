@@ -25,21 +25,31 @@
     <style>
         #form_action {
             width: 100vw;
-            height: 100vw;
             display: flex;
         }
 
-        #button1 {
+        #button1, #button2 , #button3{
             align-content: center;
             justify-content: center;
             display: block;
-            margin: 10px auto;
+            margin: 5px auto;
             width: 100px;
             height: 30px;
+        }
+
+        #output_number {
+            margin: 10px auto;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        #number_repo {
+            text-align: center;
         }
     </style>
 </head>
 <body>
+
 
 <nav class="navbar_wrap">
     <div class="navbar">
@@ -67,12 +77,27 @@
     </a>
 </nav>
 
+<p th:text="${dice_num.getNumber()}" id="output_number"></p>
 
 <div id="button_container">
     <form action="/sin/dice_number" method="post" id="form_action">
-        <button type="submit" id="button1">시작</button>
+        <button type="submit" id="button1">주사위 던지기</button>
     </form>
 </div>
+
+<div id="clear_container">
+    <form action="/sin/reset" method="post">
+        <button type="submit" id="button3">Reset</button>
+    </form>
+</div>
+
+<div id="number_repo">
+    <p th:each="number : ${diceHistory.history}">
+        <span th:text=" '숫자   ' + ${number.getKey()} + ' :  '"></span>
+        <span th:text=" ${number.getValue()}"></span>
+    </p>
+</div>
+
 
 </body>
 </html>
