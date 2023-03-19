@@ -12,23 +12,30 @@
 </head>
 <body>
 <section class="sm_container">
+    <form action="/jw-dice" method="post" th:object="${playerDTO}">
+        <div>
+            <input type="text" id="player1" th:field="${playerDTO.playerName1}">
+            <label for="player1">player1</label>
+        </div>
+        <div class="not_error" th:errors="${playerDTO.playerName1}">
+            이름을 입력해주세요.
+        </div>
 
-    <div class="jungwon_item">
-        <!-- th:text 를 이용해서 문자를 받아오는 타임리프 문법 -->
-        <div th:text="${diceNumber}">주사위번호</div>
+        <div>
+            <input type="text" id="player2" th:field="${playerDTO.playerName2}">
+            <label for="player2">player2</label>
+        </div>
+        <div class="not_error" th:errors="${playerDTO.playerName2}">
+            이름을 입력해주세요.
+        </div>
 
-    </div>
+        <div class="item-hidden"></div>
+        <div>
+            <button type="submit">확인</button>
+        </div>
 
-    <div class="jungwon_item">
-        <!-- th:class 를 이용해서 문자를 받아 태그에 추가하는 타임리프 문법 -->
-        <i th:classappend="${diceClass}"></i>
-    </div>
-    <div class="hidden"></div>
-    <div>
-        <form action="/jw-dice" method="get">
-        <button type="submit">다시 굴리기</button>
-        </form>
-    </div>
+    </form>
+
 
 </section>
 </body>

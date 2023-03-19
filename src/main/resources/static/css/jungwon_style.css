@@ -6,22 +6,18 @@
     margin: auto;
 }
 
-.jungwon_item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10rem;
-    height: 10rem;
-    background-color: white;
-    border: 1px solid lightgray;
-    margin: 20px 10px;
-}
-
-.hidden {
+.item-hidden {
     width: 100%;
 }
-.jungwon_item > i {
-    font-size: 70px;
+.sm_container label {
+    display: block;
+}
+
+.sm_container input {
+    width: 342px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 20px;
 }
 
 button {
@@ -33,4 +29,8 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 20px;
+}
+
+.name_error {
+    color: red;
 }
