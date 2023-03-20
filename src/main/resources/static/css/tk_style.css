@@ -25,7 +25,7 @@
 
 .item1 {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -34,19 +34,20 @@
     grid-row-start: 1;
     grid-row-end: 3;
 }
+
 .item1 >p{
     padding: 30px;
 }
 
 .item i {
     padding: 10px;
-    font-size: 100px;
+    font-size: 75px;
     color: var(--font-color);
 }
 .wrap {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     perspective: 700px;
     cursor: pointer;
 }
@@ -56,7 +57,7 @@
     left: 50%;
     bottom: -60px;
     transform: translateX(-50%);
-    display: block;
+    /*display: block;*/
     content: "";
     width: 120px;
     height: 10px;
@@ -73,8 +74,7 @@
     height: 100%;
     transition: all 1.5s;
     transform-style: preserve-3d;
-    /* TODO: 아래가 움직임의 핵심 toggle 클래스로 따로 빼자 */
-    /*animation: freeTurn2 3s ease infinite;*/
+
 }
 
 .wrap .dice > div {
@@ -92,33 +92,90 @@
 
     border: 3px solid #555;
     background-color: rgba(253, 253, 253, 0.8);
-    transition: 4s;
+    /*transition: 4s;*/
+}
+.wrap .dice:nth-of-type(1) {
+    /*position: absolute;*/
+    left: -300px;
+
+}
+.wrap .dice:nth-of-type(2) {
+    /*position: absolute;*/
+    left: -150px;
+}
+.wrap .dice:nth-of-type(3) {
+    /*position: absolute;*/
+    left: 0;
+
+}
+.wrap .dice:nth-of-type(5) {
+    /*position: absolute;*/
+    left: 150px;
+}
+.wrap .dice:nth-of-type(6) {
+    /*position: absolute;*/
+    left: 300px;
 }
 
 .wrap .dice > div:nth-child(1) {
-    transform: translateZ(50px);
+    transform: translateZ(35px);
 }
 
 .wrap .dice > div:nth-child(2) {
-    transform: translateX(-50px) rotateY(-90deg);
+    transform: translateX(-35px) rotateY(-90deg);
 }
 
 .wrap .dice > div:nth-child(3) {
-    transform: translateZ(-50px) rotateY(-180deg);
+    transform: translateZ(-35px) rotateY(-180deg);
 }
 
 .wrap .dice > div:nth-child(4) {
-    transform: translateX(50px) rotateY(90deg);
+    transform: translateX(35px) rotateY(90deg);
 }
 
 .wrap .dice > div:nth-child(5) {
-    transform: translateY(-50px) rotateX(90deg);
+    transform: translateY(-35px) rotateX(90deg);
 }
 
 .wrap .dice > div:nth-child(6) {
-    transform: translateY(50px) rotateX(270deg);
+    transform: translateY(35px) rotateX(270deg);
 }
 
+.item_button {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+}
+
+.sw_group {
+    width: 60%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.item_button .button_cover {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 250px;
+    height: 80px;
+}
+
+.button_cover > button {
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+}
 
 .item2 {
     /*display: flex;*/
@@ -127,8 +184,12 @@
     align-items: center;
     grid-column-start: 1;
     grid-column-end: 4;
-    grid-row-start: 3;
-    grid-row-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 6;
+
+}
+.item2 i {
+    font-size: 40px;
 }
 .item3 {
     /*display: flex;*/
@@ -137,11 +198,15 @@
     align-items: center;
     grid-column-start: 4;
     grid-column-end: 5;
-    grid-row-start: 3;
-    grid-row-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 6;
 }
 
 .item-hidden {
+    display: none;
+    width: 100%;
+}
+.hidden_space{
     display: none;
     width: 100%;
 }
@@ -156,7 +221,7 @@
 .item6 {
     grid-column-start: 1;
     grid-column-end: 5;
-    grid-row: 5;
+    grid-row: 6;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -164,4 +229,12 @@
 }
 .item6 .bold {
     color: var(--point-color-purple);
+}
+
+@media screen and (max-width: 768px) {
+    .hidden_space {
+        display: block;
+    }
+
+
 }
