@@ -14,8 +14,8 @@ public class JwServiceImp implements JwService {
     public void setMembersName(String playerName1, String playerName2) {
         Player player1 = new Player(playerName1);
         Player player2 = new Player(playerName2);
-        repository.getMembers().put("player1", player1);
-        repository.getMembers().put("player2", player2);
+        repository.saveMemberName("player1", player1);
+        repository.saveMemberName("player2", player2);
     }
 
     public Player getMember(String member) {

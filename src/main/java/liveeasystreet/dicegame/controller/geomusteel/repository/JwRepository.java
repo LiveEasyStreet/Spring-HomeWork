@@ -9,4 +9,6 @@ public interface JwRepository {
     Player findMember(String playerName);
 
     Map<String, Player> getMembers();
+
+    void saveMemberName(String playerName, Player player);
 }

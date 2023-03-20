@@ -20,5 +20,8 @@ public class JwRepositoryImp implements JwRepository {
         return member;
     }
 
-
+    @Override
+    public void saveMemberName(String playerName, Player player) {
+        member.put(playerName, player);
+    }
 }
