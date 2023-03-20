@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout (~{::title}, ~{::link}, ~{::script}, ~{::section})}">
+<head>
+    <link rel="stylesheet" th:href="@{css/jungwon_style_home.css}">
+    <link rel="stylesheet" th:href="@{assets/css/reset.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script></script>
+    <title>정원 주사위</title>
+</head>
+<body>
+<section class="h_container">
+
+    <div class="h_win">
+        <div th:if="${winnerCheck==0}">주사위를 굴려 먼저 50점을 달성한 사람이 승리입니다.</div>
+        <div th:if="${winnerCheck==1}"><span th:text="${player1.name}"></span><span>의 승리입니다.</span></div>
+        <div th:if="${winnerCheck==2}"><span th:text="${player2.name}"></span><span>의 승리입니다.</span></div>
+        <div th:if="${winnerCheck==3}">무승부 입니다.</div>
+    </div>
+
+    <!-- 이름 -->
+    <div class="h_player_box">
+        <div class="h_name">
+            <span>이름 : </span><span th:text="${player1.name}">텍스트</span>
+        </div>
+    </div>
+    <div class="h_player_box">
+        <div class="h_name">
+            <span>이름 : </span><span th:text="${player2.name}">텍스트</span>
+        </div>
+    </div>
+
+    <!-- 번호 -->
+    <div class="h_player_box">
+        <div class="h_number" th:if="${player1.diceNumber == 0}">
+            <span>주사위를 굴려주세요</span>
+        </div>
+        <div class="h_number" th:if="${player1.diceNumber != 0}">
+            <span>번호 : </span><span th:text="${player1.diceNumber}">텍스트</span>
+        </div>
+    </div>
+    <div class="h_player_box">
+        <div class="h_number" th:if="${player1.diceNumber == 0}">
+            <span>주사위를 굴려주세요</span>
+        </div>
+        <div class="h_number" th:if="${player2.diceNumber != 0}">
+            <span>번호 : </span><span th:text="${player2.diceNumber}">텍스트</span>
+        </div>
+    </div>
+
+    <!-- 합계 -->
+    <div class="h_player_box">
+        <div class="h_total">
+            <span>합계 : </span><span th:text="${player1.totalScore}">텍스트</span>
+        </div>
+    </div>
+    <div class="h_player_box">
+        <div class="h_total">
+            <span>합계 : </span><span th:text="${player2.totalScore}">텍스트</span>
+        </div>
+    </div>
+
+    <!-- 내역 -->
+    <div class="h_history">
+        <span>내역</span>
+
+        <span th:text="${player1.diceHistory}">텍스트</span>
+    </div>
+    <div class="h_history">
+        <span>내역</span>
+        <span th:text="${player2.diceHistory}">텍스트</span>
+    </div>
+
+    <div class="h_roll">
+        <button type="button" onclick="location.href='/jw-roll'">주사위를 굴리기</button>
+    </div>
+
+
+</section>
+</body>
+</html>
