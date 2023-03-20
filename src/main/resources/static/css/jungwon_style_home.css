@@ -1,0 +1,62 @@
+.h_container {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 100px 50px 50px 50px 200px 100px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.h_player_box {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.h_win {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    height: 100%;
+}
+
+
+
+.h_roll {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: white;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+.h_history {
+    display: flex;
+    flex-flow: column;
+    background-color: white;
+    height: 100%;
+    padding: 30px;
+    justify-content: start;
+    align-items: start;
+}
+button {
+    background-color: #F66B0E;
+    width: 342px;
+    height: 40px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+

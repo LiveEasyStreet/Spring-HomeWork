@@ -2,7 +2,7 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org"
       th:replace="~{layout/base :: layout (~{::title}, ~{::link}, ~{::script}, ~{::section})}">
 <head>
-    <link rel="stylesheet" th:href="@{css/jungwon_style.css}">
+    <link rel="stylesheet" th:href="@{css/jungwon_style_name.css}">
     <link rel="stylesheet" th:href="@{assets/css/reset.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
           integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
@@ -13,29 +13,31 @@
 <body>
 <section class="sm_container">
     <form action="/jw-dice" method="post" th:object="${playerDTO}">
-        <div>
-            <input type="text" id="player1" th:field="${playerDTO.playerName1}">
+        <div class="item_wrap">
             <label for="player1">player1</label>
-        </div>
-        <div class="not_error" th:errors="${playerDTO.playerName1}">
-            이름을 입력해주세요.
+            <input type="text" id="player1" th:field="${playerDTO.playerName1}">
+            <div class="not_error" th:errors="${playerDTO.playerName1}">
+                이름을 입력해주세요.
+            </div>
         </div>
 
-        <div>
-            <input type="text" id="player2" th:field="${playerDTO.playerName2}">
+
+        <div class="item_wrap">
             <label for="player2">player2</label>
+            <input type="text" id="player2" th:field="${playerDTO.playerName2}">
+            <div class="not_error" th:errors="${playerDTO.playerName2}">
+                이름을 입력해주세요.
+            </div>
         </div>
-        <div class="not_error" th:errors="${playerDTO.playerName2}">
-            이름을 입력해주세요.
-        </div>
+
 
         <div class="item-hidden"></div>
-        <div>
+
+        <div class="item_wrap">
             <button type="submit">확인</button>
         </div>
 
     </form>
-
 
 </section>
 </body>

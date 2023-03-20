@@ -13,7 +13,8 @@ public class Player {
     List<Integer> diceHistory = new ArrayList<>();
 
     String name;
-    int diceNumber;
+    int diceNumber = 0;
+    int totalScore = 0;
 
     // 기본 생성자
     public Player() {
