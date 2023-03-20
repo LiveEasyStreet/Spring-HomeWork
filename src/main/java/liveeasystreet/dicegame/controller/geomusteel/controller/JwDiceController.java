@@ -1,10 +1,9 @@
 package liveeasystreet.dicegame.controller.geomusteel.controller;
 
-
 import liveeasystreet.dicegame.controller.geomusteel.domain.Player;
 import liveeasystreet.dicegame.controller.geomusteel.domain.PlayerDTO;
-import liveeasystreet.dicegame.controller.geomusteel.repository.JwRepository;
 import liveeasystreet.dicegame.controller.geomusteel.service.JwService;
+import liveeasystreet.dicegame.controller.geomusteel.service.JwServiceImp;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -14,8 +13,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Random;
 
@@ -24,7 +21,6 @@ import java.util.Random;
 @RequiredArgsConstructor
 public class JwDiceController {
 
-    public final JwRepository repository;
     public final JwService service;
 
     @GetMapping("/jw-dice")
@@ -44,10 +40,8 @@ public class JwDiceController {
         // 성공로직
         String playerName1 = playerDTO.getPlayerName1();
         String playerName2 = playerDTO.getPlayerName2();
-        repository.setMembersName(playerName1,playerName2);
 
-
-
+        service.setMembersName(playerName1,playerName2);
 
         return "redirect:/jw-home";
     }
@@ -56,8 +50,8 @@ public class JwDiceController {
     public String jwDiceHome(@ModelAttribute("player") Player player,
                              Model model) {
 
-        Player player1 = repository.getMember("player1");
-        Player player2 = repository.getMember("player2");
+        Player player1 = service.getMember("player1");
+        Player player2 = service.getMember("player2");
 
         int winnerCheck = service.winnerCheck(player1,player2);
 
@@ -72,8 +66,8 @@ public class JwDiceController {
     public String jwDiceRoll(){
 
         Random random = new Random();
-        Player player1 = repository.getMember("player1");
-        Player player2 = repository.getMember("player2");
+        Player player1 = service.getMember("player1");
+        Player player2 = service.getMember("player2");
 
         int player1Number = random.nextInt(6) + 1;
         int player2Number = random.nextInt(6) + 1;

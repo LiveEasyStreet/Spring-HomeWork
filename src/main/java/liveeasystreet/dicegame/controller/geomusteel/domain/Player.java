@@ -10,11 +10,11 @@ import java.util.List;
 @Setter
 public class Player {
 
-    List<Integer> diceHistory = new ArrayList<>();
+    private List<Integer> diceHistory = new ArrayList<>();
 
-    String name;
-    int diceNumber = 0;
-    int totalScore = 0;
+    private String name;
+    private int diceNumber = 0;
+    private int totalScore = 0;
 
     // 기본 생성자
     public Player() {
