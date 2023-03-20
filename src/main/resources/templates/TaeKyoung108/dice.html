@@ -63,17 +63,59 @@
                 <div><i class="fa-solid fa-dice-five"></i></div>
                 <div><i class="fa-solid fa-dice-six"></i></div>
             </div>
+            <div class="dice">
+                <div><i class="fa-solid fa-dice-one"></i></div>
+                <div><i class="fa-solid fa-dice-two"></i></div>
+                <div><i class="fa-solid fa-dice-three"></i></div>
+                <div><i class="fa-solid fa-dice-four"></i></div>
+                <div><i class="fa-solid fa-dice-five"></i></div>
+                <div><i class="fa-solid fa-dice-six"></i></div>
+            </div>
+            <div class="dice">
+                <div><i class="fa-solid fa-dice-one"></i></div>
+                <div><i class="fa-solid fa-dice-two"></i></div>
+                <div><i class="fa-solid fa-dice-three"></i></div>
+                <div><i class="fa-solid fa-dice-four"></i></div>
+                <div><i class="fa-solid fa-dice-five"></i></div>
+                <div><i class="fa-solid fa-dice-six"></i></div>
+            </div>
+            <div class="hidden_space"></div>
+            <div class="dice">
+                <div><i class="fa-solid fa-dice-one"></i></div>
+                <div><i class="fa-solid fa-dice-two"></i></div>
+                <div><i class="fa-solid fa-dice-three"></i></div>
+                <div><i class="fa-solid fa-dice-four"></i></div>
+                <div><i class="fa-solid fa-dice-five"></i></div>
+                <div><i class="fa-solid fa-dice-six"></i></div>
+            </div>
+            <div class="dice">
+                <div><i class="fa-solid fa-dice-one"></i></div>
+                <div><i class="fa-solid fa-dice-two"></i></div>
+                <div><i class="fa-solid fa-dice-three"></i></div>
+                <div><i class="fa-solid fa-dice-four"></i></div>
+                <div><i class="fa-solid fa-dice-five"></i></div>
+                <div><i class="fa-solid fa-dice-six"></i></div>
+            </div>
         </div>
-        <p>버튼을 누르세요.</p>
-        <button onclick="getDiceNum()">Dice</button>
-    </div>
 
+    </div>
+    <div class="item item_button">
+<!--        <div class = sw_group>-->
+<!--            <input type="checkbox">-->
+<!--            <input type="checkbox">-->
+<!--            <input type="checkbox">-->
+<!--            <input type="checkbox">-->
+<!--            <input type="checkbox">-->
+<!--        </div>-->
+        <div class="button_cover">
+            <button name="dice" value="roll" class="button1" id="rolling_button" onclick="getDiceNum()">Dice</button>
+            <button name="dice" value="save" class="button2" id="save_button" onclick="saveDice()" disabled>Save</button>
+        </div>
+    </div>
     <div class="item item2">
         <span class="bold">기록</span>
-        <p>주사위 기록을 보여줄 페이지</p>
-        <p>일종의 홀짝 게임같은거지</p>
-
-
+        <div id="result_list">
+        </div>
     </div>
     <div class="item item3">
         <span class="bold">점수</span>
@@ -88,7 +130,6 @@
         <span class="bold">Designed by Apple in California</span>
         <span class="bold">Assembled in China</span>
     </div>
-
 
 </div>
 
