@@ -9,4 +9,6 @@ import java.util.Map;
 @NoArgsConstructor
 public class DiceHistory {
     private Map<Integer, Integer> history;
+
+
 }

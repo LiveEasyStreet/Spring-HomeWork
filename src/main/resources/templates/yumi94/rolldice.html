@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:float="http://www.w3.org/1999/xhtml"
+      xmlns:width="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://kit.fontawesome.com/e7f299d932.js" crossorigin="anonymous"></script>
+    <title>주사위</title>
+
+    <style>
+
+     #extraction_number {
+        text-align: center;
+        font-size: 120px;
+        font-weight: bold;
+        color: #ff7f00;
+     }
+     #submit {
+        display:flex;
+     }
+     #btn {
+        align-content: center;
+        justify-content: center;
+        display: block;
+        margin: 0px auto;
+        width: 100px;
+        height: 60px;
+        background-color:#ffffff;
+        border: 4px solid #11264f;
+        color: #ff7f00;
+        font-size: 20px;
+        cursor: pointer;
+     }
+     #wrap2 {
+        width: 450px;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+     }
+    #dice {
+        width: 50px;
+        height: 50px;
+        top: 100px;
+        margin: 10px 10px;
+        float:left
+    }
+
+
+    </style>
+</head>
+
+<body>
+<section>
+    <div class="wrap">
+        <p th:text="${yumiDice.getNumber()}" id="extraction_number"></p>
+        <div class="start_btn">
+            <form action="/yumi94/yumidice" method="get" id="submit">
+                <button type="submit" id="btn">START</button>
+            </form>
+        </div>
+    </div>
+    <div class="wrap2">
+        <div class="dice">
+            <i class="fa-solid fa-dice-one fa-3x"></i>
+            <span th:text="${diceHistory.history[1]}">:</span>
+        </div>
+        <div class="dice">
+            <i class="fa-solid fa-dice-two fa-3x"></i>
+            <span th:text="${diceHistory.history[2]}">:</span>
+        </div>
+        <div class="dice">
+            <i class="fa-solid fa-dice-three fa-3x"></i>
+            <span th:text="${diceHistory.history[3]}">:</span>
+        </div>
+        <div class="dice">
+            <i class="fa-solid fa-dice-four fa-3x"></i>
+            <span th:text="${diceHistory.history[4]}">:</span>
+        </div>
+        <div class="dice">
+            <i class="fa-solid fa-dice-five fa-3x"></i>
+            <span th:text="${diceHistory.history[5]}">:</span>
+        </div>
+        <div class="dice">
+            <i class="fa-solid fa-dice-six fa-3x"></i>
+            <span th:text="${diceHistory.history[6]}">:</span>
+        </div>
+    </div>
+</section>
+</body>
+</html>

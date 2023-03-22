@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <title>시작 전 페이지</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet th:href=@{js/yumi_Dice.js}">
+    <script defer src="assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.1/jquery-migrate.min.js"></script>
+    <script src="https://kit.fontawesome.com/e7f299d932.js" crossorigin="anonymous"></script>
+    <script defer src="/assets/js/script.js"></script>
+</head>
+<script>
+setTimeout('move_page()', 3000);
+
+function move_page() {
+    location.href="yumi94/yumidice"
+}
+</script>
+<style>
+    #body {
+          background-color: #11264f;
+    }
+    #h1 {
+        position: absolute;
+        left:50%;
+        top:40%;
+        transform: translate(-50%, 50%);
+        font-weight: bold;
+        color: #ff7f00;
+    }
+</style>
+<body>
+    <h1>3초 후 주사위 시작!</h1>
+</body>
+</html>
