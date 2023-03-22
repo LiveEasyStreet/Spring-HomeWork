@@ -8,9 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-
-// 오류 때문에 헷갈리기 시작해서 내래 주석을 달아봅니다.
 
 
 /**
@@ -27,29 +24,29 @@ public class Yumi94_DiceController {
 
     private final IDiceService diceService;
 
-    @GetMapping("/yumi_dice")                                        // yumi_dice로 Get요청이 들어오면 return 값인 "yumi94/dice"을 생성?
+    @GetMapping("/yumi94")
     public String diceMain() {
 
-        return "yumi94/yumiDice";
+        return "yumi94/startDice";
+
     }
 
-    @PostMapping("/yumi_dice")                                       // 저번 코드에서 해당 주소를 열면 바로 주사위 숫자가 나오는 이유가
-                                                                    // GetMapping만 존재하고 PostMapping을 사용하지 않았기 때문이다.
+    @GetMapping ("/yumi94/yumidice")
     public String yumiDice (Model model) {
 
-        Dice yumiDice = new Dice();                                 // yumiDice 객체 생성
+        Dice yumiDice = new Dice();
         DiceHistory diceHistory = new DiceHistory();
 
-        int randomNum = (int)(Math.random()*6)+1;                   // 주사위 랜덤숫자 생성과 yumiDice에 보관
+        int randomNum = (int)(Math.random()*6)+1;
         yumiDice.setNumber(randomNum);
 
-        model.addAttribute( "yumiDice", yumiDice);      // yumiDice 객체를 "yumiDice"이름으로 추가
+        model.addAttribute( "yumiDice", yumiDice);
 
         diceService.save(yumiDice);
 
         DiceHistory storagediceHistory = diceService.loadHistory();
-        model.addAttribute("diceHistory", storagediceHistory); //
+        model.addAttribute("diceHistory", storagediceHistory);
 
-        return "yumi94/yumiDice";
+        return "yumi94/rolldice";
     }
 }
